@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 기초2</title>
+  <link rel="stylesheet" href="./javascript_basic2.css">
+  <script src="javascript_basic2.js"></script>
+  <style>
+    .alert_box {
+      display: none;
+      background-color: rgb(25, 78, 80);
+      color: rgb(255, 66, 66);
+      padding: 20px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="alert_box" id="alert">Alert 박스</div>
+  <button onclick="document.getElementById('alert').style.display='block'">Alert</button>
+  <button onclick="document.getElementById('alert').style.display='none'">Hide</button>
+</body>
+</html>

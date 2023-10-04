@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 기초1</title>
+  <script>
+    window.onload = function() {
+      document.getElementById('hello').innerHTML = '안녕'
+      document.getElementById('hi').innerHTML = '올 때 바밤바'
+      console.log(document.getElementById('hello'))
+      console.log(document.querySelector('#hello'))
+      document.getElementById('hello').style.fontSize='30pt'
+    }
+  </script>
+</head>
+<body>
+  <h2 id="hello">안녕하세요</h2>
+  <h2 id="hi">올 때 메로나</h2>
+</body>
+</html>
