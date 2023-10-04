@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 연습5</title>
+  <style>
+    .yellow-bg {
+      background-color: yellow;
+    }
+  </style>
+  <script src="../jquery/jquery-3.7.1.js"></script>
+  <script>
+    $().ready(function() {
+      $('#test').html('ㅎㅇ')
+      $('#test').css('color', 'red')
+
+      $('#test').after('<div class="yellow-bg">ㅅㄱ</div>')
+    })
+
+  </script>
+</head>
+<body>
+  <h4 id="test">안녕하세요</h4>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>자바스크립트 연습4</title>
+  <style>
+    .alert_box {
+      background-color: rgb(48, 0, 58);
+      color: rgb(214, 0, 143);
+      display: none;
+    }
+  </style>
+  <script>
+    function alertfunc(box_display, text) {
+      document.getElementById('alert').style.display=box_display
+      document.getElementById('title').innerHTML=text
+    }
+    window.onload = function() {
+      document.getElementById('close').addEventListener('dblclick', function() {
+        document.getElementById('alert').style.display='none'
+      })
+    }
+  </script>
+</head>
+<body>
+  <div class="alert_box" id="alert">
+    <p id="title">alert.</p>
+    <button id="close">닫기</button>
+  </div>
+  <button onclick="alertfunc('block', '아이디 입력해라')">아이디</button>
+  <button onclick="alertfunc('block', '비밀번호 입력해라')">비밀번호</button>
+</body>
+</html>
