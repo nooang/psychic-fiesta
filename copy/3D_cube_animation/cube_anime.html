@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ㅎㅎ</title>
+  <link rel="stylesheet" href="cube_anime.css">
+  <script src="cube_anime.js"></script>
+</head>
+<body>
+  <div class="container">
+    <class class="cube">
+    </class>
+  </div>
+
+  <script>
+    var cube = document.querySelector('.cube')
+    var parts = ['front', 'back', 'right', 'left', 'top', 'bottom']
+
+    parts.forEach(part => {
+      var wrapper = document.createElement('div')
+      wrapper.classList.add(part)
+
+      for (let i = 1; i <= 3; i++) {
+        var side = document.createElement('div')
+        wrapper.appendChild(side)
+
+        for (let y = 1; y <= 3; y++) {
+          var box = document.createElement('span')
+          side.appendChild(box)
+        }
+      }
+      cube.appendChild(wrapper)
+    })
+  </script>
+</body>
+</html>
