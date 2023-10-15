@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>에이잭스 기본</title>
+  <script src="../../jquery/jquery-3.7.1.js"></script>
+</head>
+<body>
+  <button type="button" id="btn-data">클릭하면?</button>
+  <div id="data">data</div>
+
+  <script>
+    var loaddata
+    $('#btn-data').click(function() {
+      $.ajax({
+        url: 'https://raw.githubusercontent.com/paullabkorea/coronaVaccinationStatus/main/data/data.json',
+        async: true,
+        dataType: 'JSON',
+        success: function(response) {
+          loaddata=response
+          // $('#data').html(response)
+        }
+      })
+    })
+  </script>
+</body>
+</html>
