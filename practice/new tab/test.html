@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script defer>
+    window.onload = function() {
+      function openReportWindow() {
+        console.log('ggg')
+        let reportWindow = window.open('./test_link1.html', 'reportWindow', 'width=500, height=400')
+
+        reportWindow.focus()
+      }
+    }
+  </script>
+</head>
+<body>
+  <a href="#" onclick="openReportWindow()">새창으로 열려라!</a>
+</body>
+</html>
