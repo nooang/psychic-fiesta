@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>모달 만들기 카피</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="modal.css">
+  <script src="../../jquery/jquery-3.7.1.js"></script>
+</head>
+<body>
+  <button class="btn-open">뉴스레터 구독하기</button>
+
+  <div class="modal">
+    <div class="modal-content">
+      <div class="photo"></div>
+      <div class="desc">
+        <div class="desc-header">
+          <h2>지금 다양한 혜택을 받아보세요.</h2>
+          <button class="btn-close">&times;</button>
+        </div>
+        <div class="desc-content">
+          <input type="email" placeholder="이메일 주소를 입력하세요.">
+          <button>뉴스레터 구독하기</button>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. 
+            Quibusdam non odio nisi eos nesciunt, magni, blanditiis quos 
+            maxime sunt laudantium sint reprehenderit delectus sit ipsam 
+            sed recusandae, quaerat dignissimos ullam?
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="overlay"></div>
+  
+  <script>
+    $('.modal, .overlay').addClass('active')
+    
+    $('.btn-open').click(function() {
+      $('.modal, .overlay').addClass('active')
+    })
+    $('.btn-close, .overlay').click(function() {
+      $('.modal, .overlay').removeClass('active')
+    })
+  </script>
+
+</body>
+</html>
