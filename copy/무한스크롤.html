@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>무한 스크롤</title>
+  <style>
+    html, body { margin: 0; }
+    section .box {
+      height: 500px;
+      background-color: tomato;
+      color: #e5e5e5;
+      box-sizing: border-box;
+      padding: 30px 10px;
+      font-size: 2rem;
+    }
+    section .box:nth-child(2n) {
+      background-color: teal;
+    }
+  </style>
+</head>
+<body>
+  <section>
+    <div class="box">
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
+      Earum similique optio a, distinctio voluptatem delectus, 
+      dolore rerum nisi reiciendis est quia adipisci, eveniet eaque 
+      blanditiis repellendus minus. Similique nihil, tempore necessitatibus 
+      quo consequuntur commodi aperiam iste suscipit animi dolorem numquam, 
+      quam dolore amet tempora dolorum. Natus nulla obcaecati tempora quis 
+      sint possimus vitae odit nihil eius? Fugit dignissimos commodi est 
+      iste id nesciunt incidunt, illo nemo, a quos odio sit. Alias officiis 
+      quibusdam eius odio nam a omnis sequi voluptatum veritatis, distinctio 
+      similique ex ab consequatur excepturi hic asperiores amet molestiae 
+      eaque optio ratione esse voluptates. Veniam nemo vitae ratione.
+    </div>
+    <div class="box">
+      Lorem ipsum, dolor sit amet consectetur adipisicing elit. Et voluptas, 
+      laboriosam qui dolorem temporibus minima dolorum quos. Saepe maiores 
+      dolor autem minima ut labore voluptas quibusdam asperiores delectus commodi, 
+      culpa impedit rem vitae voluptates atque hic iusto assumenda 
+      perferendis quidem minus ducimus non? Perspiciatis neque cumque, 
+      alias exercitationem ratione vel saepe ipsa quibusdam magnam sapiente, 
+      veniam corrupti esse dolores consequuntur architecto dolorum provident 
+      debitis atque placeat quasi dolore explicabo eos officiis. 
+      Voluptatem suscipit delectus qui debitis ex nihil voluptate ullam 
+      error accusamus dolores nobis veritatis rerum provident odio adipisci 
+      mollitia vero est harum tempore reiciendis, quibusdam aperiam dignissimos 
+      quia quasi? Consequuntur totam minus voluptate rem quo eius aperiam iste 
+      ipsa ea ratione ad, blanditiis voluptas nihil possimus quos veritatis 
+      consequatur officia autem. Adipisci ut voluptates porro natus incidunt 
+      officia eaque non nobis nam, voluptas delectus! Facilis pariatur dignissimos 
+      vel similique sed neque id alias corrupti, hic libero, at, repellendus 
+      odit aut enim. Libero nisi harum unde suscipit culpa magnam animi, 
+      iusto quas obcaecati voluptas magni hic, beatae, illum placeat! Amet impedit 
+      corrupti rem corporis laboriosam totam voluptatibus reprehenderit libero? 
+      Nihil velit nam deserunt corporis, atque illo enim natus in a, tempore, 
+      expedita vel aliquid saepe laudantium tempora non impedit! Fuga.
+    </div>
+  </section>
+  <script>
+    let count = 2
+    window.onscroll = function() {
+      if((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
+        let toAdd = document.createElement('div')
+        toAdd.classList.add('box')
+        toAdd.textContent = `${++count}번째 블록`
+        document.querySelector('section').appendChild(toAdd)
+      }
+    }
+  </script>
+</body>
+</html>
