@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="ripple_effect.css">
+</head>
+<body>
+  <button id="btn1">Click!</button> 
+
+  <script>
+    const btn = document.getElementById('btn1')
+
+    const onClick = e => {
+      console.log(e.clientX, e.clientY)
+      const {x, y, width, height} = btn.getBoundingClientRect()
+      const radius = Math.sqrt(width * width + height * height)
+      btn.style.setProperty('--diameter', radius * 2 + 'px')
+      const {clientX, clientY} = e
+      const left = (clientX - x - radius) / width * 100 + '%'
+      const top = (clientY - y - radius) / height * 100 + '%'
+
+      btn.style.setProperty('--left', left)
+      btn.style.setProperty('--top', top)
+      btn.style.setProperty('--a', '')
+      setTimeout(() => {
+        btn.style.setProperty('--a', 'ripple-effect 500ms linear') 
+      });
+      
+    }
+
+    btn.addEventListener('click', onClick)
+  </script>
+</body>
+</html>
