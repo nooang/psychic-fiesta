@@ -1,28 +1,32 @@
 * {
+  padding: 0;
+  margin: 0;
+  list-style: none;
   box-sizing: border-box;
 }
 
-ul {
-  list-style: none;
+.container {
+  margin: 30px;
 }
 
 input, button {
   padding: 5px 10px;
 }
 
-#list {
-  border: 1px solid #ccc;
-  padding: 20px;
+.list {
   display: flex;
   flex-wrap: wrap;
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
   justify-content: space-between;
 }
 
-#list > li {
+.list > li {
   flex-basis: 48%;
   margin-bottom: 20px;
 }
 
-#list > li > img {
+.list > li > img {
   width: 80%;
 }
