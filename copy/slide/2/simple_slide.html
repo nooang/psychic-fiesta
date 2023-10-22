@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="./simple_slide.css">
+</head>
+<body>
+  <div class="section">
+    <input type="radio" name="slide" id="slide01" checked>
+    <input type="radio" name="slide" id="slide02">
+    <input type="radio" name="slide" id="slide03">
+
+    <div class="slidewrap">
+      <ul class="slidelist">
+        <li>
+          <a>
+            <img src="../../../src/img/slide1.png">
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="../../../src/img/slide2.png">
+          </a>
+        </li>
+        <li>
+          <a>
+            <img src="../../../src/img/slide3.png">
+          </a>
+        </li>
+        <div class="slide_control">
+          <div class="control01">
+            <label for="slide03" class="left"></label>
+            <label for="slide02" class="right"></label>
+          </div>
+          <div class="control02">
+            <label for="slide01" class="left"></label>
+            <label for="slide03" class="right"></label>
+          </div>
+          <div class="control03">
+            <label for="slide02" class="left"></label>
+            <label for="slide01" class="right"></label>
+          </div>
+        </div>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
