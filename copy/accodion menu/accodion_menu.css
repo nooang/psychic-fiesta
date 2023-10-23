@@ -1,0 +1,9 @@
+input[id*="answer"] {
+  display: none;
+}
+
+input[id*="asnwer"] + label {
+  display: block;
+  padding: 20px;
+  border: 1px solid #232188;
+}
