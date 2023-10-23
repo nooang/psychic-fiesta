@@ -11,6 +11,7 @@ input[id*="answer"] + label {
   font-weight: 900;
   background-color: #3634a5;
   cursor: pointer;
+  position: relative;
 }
 
 input[id*="answer"] + label em {
@@ -22,6 +23,8 @@ input[id*="answer"] + label em {
   margin-top: -15px;
   display: inline-block;
   background: url(../../src/img/left.png) 0 0 no-repeat;
+  background-size: 100%;
+  transform: rotate(-90deg);
 }
 
 input[id*="answer"] + label + div {
