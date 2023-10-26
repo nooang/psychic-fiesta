@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>복사하기 구현</title>
+</head>
+<body>
+  <h1>복사하기 구현</h1>
+  <textarea id="text"></textarea><br>
+  <button id="copy">복사</button>
+  <script>
+    document.getElementById('copy').onclick = function() {
+      var text =document.getElementById('text')
+      text.select()
+      document.execCommand('copy')
+      alert('copied!')
+    }
+  </script>
+</body>
+</html>
