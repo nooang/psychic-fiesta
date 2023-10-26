@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .admin_main_list {
+      display: flex;
+      flex-direction: column;
+      background-color: #880d0d;
+      color: white;
+    }
+    .admin_main_list li {
+      padding: 5px 10px;
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+  <nav class="admin_nav">
+    <ul class="admin_main_list">
+      <li>
+        회원
+        <ul class="admin_sub_list">
+          <li>개인</li>
+          <li>기업</li>
+        </ul>
+      </li>
+      <li>
+        게시글
+        <ul class="admin_sub_list">
+          <li>자유 게시판</li>
+          <li>질답 게시판</li>
+          <li>기업소식 게시판</li>
+          <li>알고리즘 게시판</li>
+        </ul>
+      </li>
+      <li>
+        통합
+        <ul class="admin_sub_list">
+          <li>공지</li>
+          <li>신고</li>
+          <li>해시태그</li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+</body>
+</html>
