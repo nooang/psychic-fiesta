@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../jquery/jquery-3.7.1.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    ul li {
+      list-style: none;
+    }
+
+    .admin_main_list::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+    body {
+      background-color: green;
+    }
+    header {
+      margin-top: 20px;
+      background: linear-gradient(white 50pxp, rgba(255,255,255,0.5) 50px, rgba(255,255,255,0.5));
+      height: 50px;
+      overflow: hidden;
+    }
+
+    nav {
+      width:960px; 
+      margin:0 auto;
+    }
+
+    nav > ul > li {
+      float:left; 
+      line-height:50px; 
+      margin-right:40px; 
+      position: relative;
+    }
+
+    nav > ul > li ul { 
+      width:100%; 
+      display: none; 
+      position: absolute;
+    }
+
+    nav > ul > li ul li {
+      white-space:nowrap;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="admin_category">
+      <ul class="admin_main_list">
+        <li>회원
+          <ul class="admin_sub_list">
+            <li>개인</li>
+            <li>기업</li>
+          </ul>
+        </li>
+        <li>게시글
+          <ul class="admin_sub_list">
+            <li>자유 게시판</li>
+            <li>질답 게시판</li>
+            <li>기업소식 게시판</li>
+            <li>알고리즘 게시판</li>
+          </ul>
+        </li>
+        <li>통합
+          <ul class="admin_sub_list">
+            <li>공지</li>
+            <li>신고</li>
+            <li>해시태그</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+</body>
+<script>
+  $(function() {
+    let firstMenu = $('nav > ul > li'), header = $('header')
+
+    firstMenu.mouseover(function() {
+      header.stop().animate({height: '300px'}, 300)
+    }).mouseout(function() {
+      header.stop().animate({height: '50px'}, 300)
+    })
+  })
+</script>
+</html>
