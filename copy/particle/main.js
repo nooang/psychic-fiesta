@@ -63,7 +63,7 @@ class Line {
 }
 
 // 3. 파티클 만들기
-const TOTAL = 150
+const TOTAL = 50
 let particles = []
 let mouse = { x: 0, y: 0, isActive: false }
 for (let i = 0; i < TOTAL; i++) {
