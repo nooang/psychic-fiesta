@@ -9,10 +9,53 @@
       background-color: #090909;
       display: flex;
       margin: 0;
+      width: 100%;
+    }
+
+    .text_container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      text-align: center;
+      color: #f5f5f5;
+      opacity: 0.9;
+    }
+
+    .text_wrap {
+      animation: shake 5s infinite;
+    }
+
+    .text_title {
+      font-size: 50pt;
+      font-weight: bold;
+    }
+
+    .text_desc {
+      font-size: 20pt;
+      font-weight: bold;
+    }
+
+    @keyframes shake {
+      0% {
+        transform: rotate(5deg);
+      }
+      50% {
+        transform: rotate(-5deg);
+      }
+      100% {
+        transform: rotate(5deg);
+      }
     }
   </style>
 </head>
 <body>
+  <div class="text_container">
+    <div class="text_wrap">
+      <div class="text_title">404 Not Found</div>
+      <div class="text_desc">잘못된 접근입니다.</div>
+    </div>
+  </div>
   <canvas></canvas>
   <script type="module" src="./main.js"></script>
 </body>
