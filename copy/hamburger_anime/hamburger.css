@@ -1,0 +1,15 @@
+.hamburger-button {
+  position: relative;
+  transition: .3s ease-in-out;
+  width: 45px;
+  height: 34px;
+}
+
+.hamburger-button span {
+  position: absolute;
+  height: 8px;
+  border-radius: 4px;
+  width: 100%;
+  background: #3d4146;
+  top: 0;
+}
