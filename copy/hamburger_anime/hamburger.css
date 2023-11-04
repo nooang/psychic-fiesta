@@ -1,3 +1,10 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
 .hamburger-button {
   position: relative;
   transition: .3s ease-in-out;
@@ -12,4 +19,16 @@
   width: 100%;
   background: #3d4146;
   top: 0;
+}
+
+.hamburger-button span:nth-child(1) {
+  top: 0;
+}
+.hamburger-button span:nth-child(2),
+.hamburger-button span:nth-child(3) {
+  top: 13px;
+}
+
+.hamburger-button span:nth-child(4) {
+  top: 26px;
 }
