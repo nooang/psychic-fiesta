@@ -1,20 +1,16 @@
-console.log(document.querySelector('h1').innerText)
-console.log(document.querySelector('h1').innerHTML)
-
-
 let progressWrap = document.querySelectorAll('.progress_wrap')
 
-progressWrap.forEach(function(item, index) {
-  numAnimation(index)
+progressWrap.forEach(item => {
+  numAnimation(item)
 })
 
-function numAnimation(idx) {
+function numAnimation(item) {
   let initialRate = 0
-  let targetRate = progressWrap[idx].getAttribute('data-num')
-  let progressBar = progressWrap[idx].querySelector('.bar')
-  let progressRate = progressWrap[idx].querySelector('span')
+  let targetRate = item.getAttribute('data-num')
+  let progressBar = item.querySelector('.bar')
+  let progressRate = item.querySelector('span')
 
-  let numAnim = setInterval(function() {
+  let numAnim = setInterval(() => {
     initialRate++
     if (initialRate == targetRate) {
       clearInterval(numAnim)
