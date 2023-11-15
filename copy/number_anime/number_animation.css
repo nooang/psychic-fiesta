@@ -1,0 +1,28 @@
+.progress_wrap {
+  width: 600px;
+  margin: 20px auto;
+  border-radius: 13px;
+  height: 26px;
+  border: 1px solid #3498db;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  background: #3498db;
+  border-radius: 12px;
+  height: 24px;
+}
+
+.progress_wrap span {
+  position: absolute;
+  right: 20px;
+  top: 0;
+  bottom: 0;
+  line-height: 24px;
+}
