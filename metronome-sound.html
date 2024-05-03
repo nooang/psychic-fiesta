@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.9.17/Tone.min.js"></script>
+  <style>
+    audio {
+      display: block;
+      margin: 1rem auto;
+    }
+
+    h1 {
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <button id="play" onclick="startClock()">재생</button>
+  <audio controls></audio>
+  <button id="stop" onclick="stopClock()">정지</button>
+  <audio control></audio>
+  <div>
+    <label for="bpm">bpm</label>
+    <input type="number" name="bpm" id="bpm" value="120"/>
+    <button onclick="updateBpm()">BPM 세팅</button>
+  </div>
+  <button onclick="downloadMusic()">다운로드</button>
+  <script>
+        let started = false;
+    const audio = document.querySelector('audio');
+    const synth = new Tone.Synth({
+      oscillator: {
+        type: 'sine'
+      },
+      envelope: {
+        attack: 0.0005,
+        decay: 0.1,
+        sustain: 0,
+        release: 1
+      }
+    });
+    
+    const actx  = Tone.context;
+    const dest  = actx.createMediaStreamDestination();
+    const recorder = new MediaRecorder(dest.stream);
+
+    synth.connect(dest);
+  synth.toMaster();
+
+    let patternIndex = 0;
+    let round = 0;
+    let bpm = 120; // 디폴트 BPM
+
+    const chunks = [];
+
+
+    function startClock() {
+      if (started) return;
+      started = true;
+    
+      let clockTick;
+      recorder.start()
+
+      // 시작 버튼을 누르면 Tone.js의 Transport를 사용하여 1초 간격으로 클릭 사운드를 반복 재생
+      clockTick = new Tone.Loop(time => {
+        let note = 'B4';
+        let duration = '2n';
+
+        if ([0, 4, 8, 12].includes(patternIndex)) {
+          note = 'B5';
+        }
+
+        if (patternIndex === 15) {
+          synth.triggerAttackRelease(note, '4n', time)
+          synth.triggerAttackRelease(note, '4n', time + Tone.Time('8n').toSeconds())
+          round++;
+        }
+        else {
+          synth.triggerAttackRelease(note, duration, time);
+        }
+
+
+
+        patternIndex = (patternIndex + 1) % 16;
+        
+
+        if (round === 1 && patternIndex === 1) {
+          recorder.stop();
+          
+          Tone.Transport.stop();
+          clockTick.stop();
+          recorder.ondataavailable = (e) => chunks.push(e.data);
+          recorder.onstop = (e) => {
+            let blob = new Blob(chunks, {type: 'audio.ogg; codecs=opus'});
+            audio.src = URL.createObjectURL(blob);
+          };
+        }
+
+      }, '4n').start(0);
+
+      Tone.Transport.start();
+    }
+
+    function stopClock() {
+      // 정지 버튼을 누르면 Transport를 멈추고 Loop를 취소
+      Tone.Transport.stop();
+      clockTick.stop();
+    }
+
+    function updateBpm() {
+      bpm = document.getElementById("bpm").value;
+      Tone.Transport.bpm.value = bpm;
+    }
+  </script>
+</body>
+</html>
