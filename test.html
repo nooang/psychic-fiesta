@@ -3,9 +3,164 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hello Boot!</title></head>
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #333;
+    }
+
+    #chat-container {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 450px;
+      height: 700px;
+      border: 1px solid #e5e5e5;
+      border-radius: 15px;
+      background-color: #ddd;
+      overflow: hidden;
+    }
+
+    #chat-window {
+      width: 100%;
+      height: 95%;
+      border-bottom: 1px solid #e5e5e5;
+      border-top-left-radius: 15px;
+      border-top-right-radius: 15px;
+      background-color: #94c6ec;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+    }
+
+    #input-container {
+      width: 100%;
+      height: 5%;
+    }
+
+    #input {
+      width: 85%;
+      border: 0;
+      border-bottom-left-radius: 15px;
+      outline: none;
+      padding: 10px;
+      font-size: 1.2rem;
+    }
+
+    #send {
+      width: 15%;
+      border-bottom-right-radius: 15px;
+      border: 0;
+      outline: none;
+      background-color: #a8a8a8;
+      color: #333;
+      font-size: 1rem;
+    }
+
+    #send:hover {
+      cursor: pointer;
+      background-color: #818181;
+    }
+
+    #send:active {
+      background-color: #3d3d3d;
+      color: #e5e5e5;
+    }
+
+    .chat-balloon {
+      padding: 10px;
+      margin: 5px;
+      max-width: 200px;
+      border-radius: 10px;
+    }
+
+    .left {
+      background-color: #f3f3f3;
+      align-self: flex-start;
+    }
+
+    .right {
+      background-color: #feffb3;
+      align-self: flex-end;
+    }
+
+    .flex {
+      display: flex;
+      justify-content: center;
+    }
+
+    .display-inblock {
+      display: inline-block;
+    }
+  </style>
+</head>
 <body>
-  <div>안녕하세요.</div>
-  <div>Spring Boot에서 응답드립니다.</div>
+  <div id="chat-container">
+    <div id="chat-window">
+      <div class="chat-balloon left">
+        상대방 채팅
+      </div>
+      <div class="chat-balloon right">
+        내 채팅
+      </div>
+      <div class="chat-balloon left">
+        상대방 채팅
+      </div>
+      <div class="chat-balloon right">
+        내 채팅
+      </div>
+      <div class="chat-balloon right">
+        내 채팅
+      </div>
+      <div class="chat-balloon right">
+        내 채팅
+      </div>
+    </div>
+    <div id="input-container" class="flex">
+      <input id="input" type="text" />
+      <button id="send">보내기</button>
+    </div>
+  </div>
+  <script>
+    let chatWindow = document.getElementById('chat-window');
+    let input = document.getElementById('input');
+    let send = document.getElementById('send');
+
+    send.addEventListener('click', function() {
+        sendMessage();
+    })
+
+    input.addEventListener('keyup', function() {
+      if (event.key == 'Enter') {
+        sendMessage();
+      }
+    })
+
+    chatWindow.addEventListener('click', function() {
+      input.focus();
+    })
+
+    chatWindow.addEventListener('scroll', function() {
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    })
+
+    function sendMessage() {
+      if (input.value != '') {
+        let chatBalloon = document.createElement('div');
+        chatBalloon.classList.add('chat-balloon');
+        chatBalloon.classList.add('right');
+        chatBalloon.innerText = input.value;
+        chatWindow.appendChild(chatBalloon);
+        input.value = ''
+      }
+    }
+  </script>
 </body>
 </html>

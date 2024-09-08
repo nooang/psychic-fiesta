@@ -1,0 +1,44 @@
+* {
+  text-transform: capitalize;
+}
+
+.slider-container {
+  border: 5px solid #587ea3;
+  width: 80vw;
+  margin: 0 auto;
+  height: 40vh;
+  max-width: 80rem;
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin-top: 4rem;
+}
+
+.slide-img {
+  width: 400px;
+  height: 420px;
+  object-fit: cover;
+}
+
+.person-img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+}
+
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  transition: all 0.25s ease-in-out;
+  text-align: center;
+  background: #93a7bc;
+}
+
+.slide h1 {
+  font-size: 3rem;
+  color: #e5e5e5;
+  text-shadow: 0 0 10px #333
+}

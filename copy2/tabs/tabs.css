@@ -1,0 +1,22 @@
+h1 {
+  text-transform: capitalize;
+}
+
+img {
+  width: 100%;
+  height: calc(100vw / 1.5);
+  object-fit: cover;
+}
+
+.tab-btn.active {
+  background: #333;
+  color: #e5e5e5;
+}
+
+.content {
+  display: none;
+}
+
+.content.active {
+  display: block;
+}

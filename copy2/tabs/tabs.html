@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tabs</title>
+  <!-- styles -->
+  <link rel="stylesheet" href="tabs.css">
+</head>
+<body>
+  <section>
+    <div class="title">
+      <h2>about</h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempore rem sit fugit nihil quidem autem, accusamus, repellendus esse, expedita voluptatum corporis cupiditate doloremque blanditiis eum unde tempora ullam natus est?
+      </p>
+    </div>
+    <div class="about-center section-center">
+      <article class="about-img">
+        <img src="../../src/img/img-1.jpg" alt="about picture">
+      </article>
+      <article class="about">
+        <!-- btn container -->
+        <div class="btn-container">
+          <button class="tab-btn active" data-id="history">history</button>
+          <button class="tab-btn" data-id="vision">vision</button>
+          <button class="tab-btn" data-id="goals">goal</button>
+        </div>
+        <article class="about-content">
+          <!-- single item -->
+          <div id="history" class="content active">
+            <h4>history</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta nostrum ipsum delectus totam, error ipsam reiciendis laborum exercitationem fugit laudantium architecto natus sed sunt quia magnam nulla tempore eveniet quaerat.</p>
+          </div>
+          <!-- single item -->
+          <div id="vision" class="content">
+            <h4>vision</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga eum quam animi vero, maxime, laborum ab impedit delectus recusandae architecto libero blanditiis tenetur harum ea at unde fugit pariatur iste!</p>
+          </div>
+          <!-- single item -->
+          <div id="goals" class="content">
+            <h4>goals</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatum beatae aperiam a explicabo voluptates sed atque ipsam quo vero perferendis optio nobis tenetur omnis dignissimos, dolorem unde doloremque laborum ducimus.</p>
+          </div>
+        </article>
+      </article>
+    </div>
+  </section>
+
+
+  <!-- javascript -->
+  <script src="tabs.js"></script>
+</body>
+</html>
